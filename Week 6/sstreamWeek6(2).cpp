@@ -87,7 +87,7 @@
 using namespace std; 
 
 int main(){
-	string data{"Input Test 123 4.7 A"};
+	string data{"Input Test 123 4.7 A 9999"};
 	
 	istringstream iss(data); 
 	
@@ -97,21 +97,22 @@ int main(){
 	double exDouble; 
 	char exChar; 
 	
-	iss >> exString1 >> exString2 >> exInt >> exDouble >> exDouble >> exChar; 
+	iss >> exString1 >> exString2 >> exInt >> exDouble >> exChar; 
 	
 	cout << "The following items were extracted from the istringstream object:"
 		<<"\nString: " << exString1
 		<<"\nString: " << exString2
-		<<"\n	int: " << exInt
+		<<"\nint: " << exInt
 		<<"\ndouble: " << exDouble
-		<<"\n char: " << exchar <<endl;
+		<<"\n char: " << exChar <<endl;
 		
 		//Let's attempt to read more even though the string its completed
 		
 		long value;
 		iss >> value;
 		
-		if (iss.good()){
+		if (!iss.fail()){ //program is able to reach EOF and read the last integer
+            //by telling the program if it DOESN'T fail at reading the last integer store it in value
 			cout<< "Value is: " << value << endl;
 		}else{
 			cout << "\n ISS is empty" <<endl; 
