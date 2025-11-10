@@ -28,8 +28,8 @@ int main(){
     double balance;
 
     while(inClientFile >> account >> name >> balance){
-        cout << left << setw(10) << account << setw(13) << name
-        << setw(7) << setprecision(2) << right << balance << endl;
+        cout << left << setw(10) << account << setw(10) << name
+        << setw(10) << setprecision(2) << right << balance << endl;
     }
 
 
