@@ -53,7 +53,7 @@ int main(){
             cout << "\n === Credit Balance ===\n";
             
             while(inClientFile >> account >> name >> balance){
-                if (balance > 0){
+                if (balance < 0){
                     outPutLine(account, name, balance);
                 }
             }
@@ -67,7 +67,7 @@ int main(){
             cout << "\n === Debit Balance ===\n";
 
             while(inClientFile >> account >> name >> balance){
-                if (balance < 0){
+                if (balance > 0){
                     outPutLine(account, name, balance);
                 }
             }
