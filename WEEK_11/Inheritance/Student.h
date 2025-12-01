@@ -24,6 +24,8 @@ class Student : public Person {
 		showName(); 
 		cout << "ID: " << studentID << endl; 
 	}
+};
 
 #endif
-};
+
+
